@@ -16,8 +16,8 @@
 #### File Permission Pattern
 One notable pattern is observed in the incremental process of setting file permissions, following a binary representation:
 - Imagine a set of three binary place values, filled from right to left.
-- When assigning a value to indices with existing values to the left, those values are retained.
-- When assigning a value to indices with existing values to the right, those values are dropped.
+- When assigning a value to indices with existing values to the left, those values to the left are retained.
+- When assigning a value to indices with existing values to the right, those values to the right are dropped.
 
 #### Example:
 
