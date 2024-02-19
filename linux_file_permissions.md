@@ -16,8 +16,8 @@
 #### File Permission Pattern
 One notable pattern is observed in the incremental process of setting file permissions, following a binary representation:
 - Imagine a set of three binary place values, filled from right to left.
-- When assigning a value to indices with existing values to the left, those values to the left are retained.
-- When assigning a value to indices with existing values to the right, those values to the right are dropped.
+  - When assigning a value to indices with existing values to the left, those values to the left are retained.
+  - When assigning a value to indices with existing values to the right, those values to the right are dropped.
 
 #### Example:
 
@@ -31,6 +31,7 @@ One notable pattern is observed in the incremental process of setting file permi
 | 5           | r-x     | 101                  | Right-most index filled, values to the left retained |
 | 6           | rw-     | 110                  | Middle index filled, values to the right dropped |
 | 7           | rwx     | 111                  | Right-most index filled, values to the left retained |
+
 This results in a total of 8 possible states, making octal (0-7) a suitable method for representing any state. When setting permissions for a file or directory in Linux, the octal format is used to express permissions for all three (read, write, and execute) via a single value.
 
 #### Usage in Linux File System
