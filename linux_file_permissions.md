@@ -24,8 +24,8 @@ This match-making process is enabled via the following implementation process:
 | 6           | rw-                  | Read and write permissions |
 | 7           | rwx                  | Read, write, and execute permissions |
 
-#### File Permission Pattern
-One notable pattern is observed in the incremental process of setting file permissions, following a binary representation:
+#### File Permission Pattern (Framework for human-memory)
+One notable pattern is observed during the incremention of the octal value, following the binary representation:
 - Imagine a set of three binary place values, filled from right to left.
   - When incrementing the set, you flip the right-most 0 into a 1.
   - When assigning a value to indices with existing values (1s) to the left, those values to the left are retained.
