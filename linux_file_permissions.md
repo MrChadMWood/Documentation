@@ -1,5 +1,7 @@
 ### File Permissions Documentation
 
+Preface: Duely note that every file or directory in Linux has an owner and a group (one group). Permissions are set for the owner. Permissions are set uniformly for everyone in the group. Permissions are set for everyone else.
+
 #### Octal Value, File Permissions Set, Permissions Description 
 
 | Octal Value | File Permissions Set | Permissions Description |
