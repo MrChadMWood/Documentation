@@ -77,9 +77,9 @@ Everyone: Permissions for all users not the owner or members of the designated g
    $ chgrp team shared
    
    # Set the permissions to allow the owner full access, the "team" group full access, and deny all access to others
-   $ chmod 770 shared
+   $ chmod 774 shared
    ```
-   This series of commands first creates the "shared" directory and then associates the "team" group with it using the `chgrp` command. Finally, it sets the permissions using the `chmod` command. The owner is given full permissions (7, AKA rwx), and the "team" group is also given full permissions (7, AKA rwx).
+   This series of commands first creates the "shared" directory and then associates the "team" group with it using the `chgrp` command. Finally, it sets the permissions using the `chmod` command. The owner is given full permissions (7, AKA rwx), and the "team" group is also given full permissions (7, AKA rwx). Everyone else has read-only access (4, AKA r--). Therefore, the permission set is 774, as illustrated by `chmod 774 shared`.
 
 2. **Restricting Access to Sensitive Files:**
    Let's say you have a file named "confidential.txt" containing sensitive information. You want to ensure that only the owner can read and modify the file. You can set the permissions as follows:
