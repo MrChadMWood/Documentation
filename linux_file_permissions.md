@@ -27,8 +27,9 @@ This match-making process is enabled via the following implementation process:
 #### File Permission Pattern
 One notable pattern is observed in the incremental process of setting file permissions, following a binary representation:
 - Imagine a set of three binary place values, filled from right to left.
-  - When assigning a value to indices with existing values to the left, those values to the left are retained.
-  - When assigning a value to indices with existing values to the right, those values to the right are dropped.
+  - When incrementing the set, you flip the right-most 0 into a 1.
+  - When assigning a value to indices with existing values (1s) to the left, those values to the left are retained.
+  - When assigning a value to indices with existing values (1s) to the right, those values to the right are dropped.
 
 #### Example:
 
