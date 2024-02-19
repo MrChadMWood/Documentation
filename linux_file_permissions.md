@@ -36,7 +36,7 @@ This results in a total of 8 possible states, making octal (0-7) a suitable meth
 
 #### Usage in Linux File System
 Linux file system commands utilize a set of three octal values: 0-7 0-7 0-7.
-For instance, 644.
+For instance, 644.  
 Each position out of the three characters represents a user category to apply the permissions to:
 - Position one (x--): File owner
 - Position two (-x-): Associated group
