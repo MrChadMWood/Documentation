@@ -59,7 +59,7 @@ Everyone: Permissions for all users not the owner or members of designated group
    ```
    $ chmod 770 shared
    ```
-   This command gives the owner full permissions (rwx), allows the group "team" to have full permissions (rwx), and denies all permissions to others.
+   This command gives the owner full permissions (rwx), allows the group "team" to have full permissions (rwx), and denies all permissions to others. This example assumes that the group "team" is already associated with the "shared" directory. By setting the permission for all groups associated with the directory, you've implicitly set the permissions for the "teams" group as well.
 
 2. **Restricting Access to Sensitive Files:**
    Let's say you have a file named "confidential.txt" containing sensitive information. You want to ensure that only the owner can read and modify the file. You can set the permissions as follows:
