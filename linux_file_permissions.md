@@ -21,7 +21,7 @@ One notable pattern is observed in the incremental process of setting file permi
 
 #### Example:
 
-| Octal Value | Example | Binary (Permissions) | Notes                        |
+| Octal Value | Example | Binary Representation | Notes                        |
 |-------------|---------|----------------------|------------------------------|
 | 0           | ---     | 000                  | Initial state                |
 | 1           | --x     | 001                  | First increment              |
