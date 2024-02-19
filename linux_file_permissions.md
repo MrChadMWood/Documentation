@@ -7,8 +7,9 @@ Preface: Duely note that every file or directory in Linux has an owner and a gro
 
 This is three distinct permission sets being applied to any file or directory.
 
-Permissions to be applied include read, write, and execute.
+Permissions to be applied include read, write, and execute- shortened to "rwe" for easy reference. The administrators job is to take combinations of these three permissions (rwe) and apply a combination to each kind of user (owner, group, and everyone else). 
 
+This match-making process is enabled via the following implementation process:
 
 #### Octal Value, File Permissions Set, Permissions Description 
 
