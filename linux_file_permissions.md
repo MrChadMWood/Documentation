@@ -39,27 +39,35 @@ Linux file system commands utilize a set of three octal values: 0-7 0-7 0-7.
 For instance, 644.
 Each position out of the three characters represents a user category to apply the permissions to:
 - Position one (x--): File owner
-- Position two (-x-): Groups
+- Position two (-x-): Associated group
 - Position three (--x): Everyone else
 
 #### Permissions Explanation
 - Permissions applied to the owner: Permissions that the file or directory owner is allowed.
-- Permissions applied to groups: Permissions for any groups with access to the file or directory.
+- Permissions applied to groups: Permissions for the group associated with the file or directory.
 - Permissions for everyone: Permissions for all other users who are not the owner or in the designated groups.
 
 #### Access Control
 Owner: The file or directory owner's permissions are determined by the first position (e.g., x--) in the permission set. The owner typically has the highest level of control over the file or directory, including the ability to read, write, and execute files. 
+ 
+Group permissions are represented by the second position (e.g., -x-) in the permission set. The file or directory has one associated group, and all members of this group share the same set of permissions. Administrators manage group permissions using commands like chgrp to change group ownership or chmod to adjust permissions to the named file or directory for all members of its assigned group.
 
-Groups: Group permissions are represented by the second position (e.g., -x-) in the permission set. All groups associated with the file or directory share the same set of permissions. Administrators manage group permissions using commands like chgrp to change group ownership or chmod to adjust permissions. Multiple groups can be associated with a file or directory, with each group having the same permission level set by the second position. 
+Everyone: Permissions for all users not the owner or members of the designated group are governed by the third position (e.g., --x) in the permission set. This category encompasses any user not part of the owner or any associated groups.
 
-Everyone: Permissions for all users not the owner or members of designated groups are governed by the third position (e.g., --x) in the permission set. This category encompasses any user not part of the owner or any associated groups.
 #### Examples
 1. **Setting Permissions for a Shared Directory:**
-   Suppose you have a directory named "shared" that needs to be accessed by multiple users in a group called "team." You can set the permissions as follows:
+   Suppose you have a directory named "shared" that needs to be accessed by all users in a group called "team." Here's how you can set the permissions and associate the "team" group with the "shared" directory:
    ```
+   # Create the "shared" directory
+   $ mkdir shared
+   
+   # Associate the "team" group with the "shared" directory
+   $ chgrp team shared
+   
+   # Set the permissions to allow the owner full access, the "team" group full access, and deny all access to others
    $ chmod 770 shared
    ```
-   This command gives the owner full permissions (rwx), allows the group "team" to have full permissions (rwx), and denies all permissions to others. This example assumes that the group "team" is already associated with the "shared" directory. By setting the permission for all groups associated with the directory, you've implicitly set the permissions for the "teams" group as well.
+   This series of commands first creates the "shared" directory and then associates the "team" group with it using the `chgrp` command. Finally, it sets the permissions using the `chmod` command. The owner is given full permissions (7, AKA rwx), and the "team" group is also given full permissions (7, AKA rwx).
 
 2. **Restricting Access to Sensitive Files:**
    Let's say you have a file named "confidential.txt" containing sensitive information. You want to ensure that only the owner can read and modify the file. You can set the permissions as follows:
