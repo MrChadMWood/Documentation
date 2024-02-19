@@ -49,7 +49,9 @@ Each position out of the three characters represents a user category to apply th
 
 #### Access Control
 Owner: The file or directory owner's permissions are determined by the first position (e.g., x--) in the permission set. The owner typically has the highest level of control over the file or directory, including the ability to read, write, and execute files. 
+
 Groups: Group permissions are represented by the second position (e.g., -x-) in the permission set. All groups associated with the file or directory share the same set of permissions. Administrators manage group permissions using commands like chgrp to change group ownership or chmod to adjust permissions. Multiple groups can be associated with a file or directory, with each group having the same permission level set by the second position. 
+
 Everyone: Permissions for all users not the owner or members of designated groups are governed by the third position (e.g., --x) in the permission set. This category encompasses any user not part of the owner or any associated groups.
 #### Examples
 1. **Setting Permissions for a Shared Directory:**
